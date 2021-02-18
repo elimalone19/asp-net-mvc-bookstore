@@ -116,6 +116,9 @@ h1 h2 h3 {
 
 .container {
     float: center;
+    width: 90%;
+    margin-bottom: 100px;
+    margin-top: 100px;
 }
 
 table {
@@ -123,14 +126,19 @@ table {
     border-collapse: collapse;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
+
 }
 
 th,
 td {
     padding: 15px;
-    background-color: #ff33;
-    color: #fff;
+    background-color: rgba(255,255,255,0.2);
 }
+
+td {
+    color: black;
+}
+
 
 th, tr, td {
     text-align: left;
@@ -138,5 +146,6 @@ th, tr, td {
 
 
 th {
-    background-color: #ff33;
+    background-color: #55608f;
+    color: #fff;
 }

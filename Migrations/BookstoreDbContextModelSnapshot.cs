@@ -31,10 +31,10 @@ namespace asp_net_fifth_assignment.Migrations
                     b.Property<string>("AuthorLastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CategoryOne")
+                    b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CategoryTwo")
+                    b.Property<string>("Classification")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Isbn")

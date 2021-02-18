@@ -17,8 +17,8 @@ namespace asp_net_fifth_assignment.Migrations
                     AuthorLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Publisher = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Isbn = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoryOne = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoryTwo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Classification = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>

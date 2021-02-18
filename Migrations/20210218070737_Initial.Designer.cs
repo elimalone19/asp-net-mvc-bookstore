@@ -9,7 +9,7 @@ using asp_net_fifth_assignment.Models;
 namespace asp_net_fifth_assignment.Migrations
 {
     [DbContext(typeof(BookstoreDbContext))]
-    [Migration("20210218055905_Initial")]
+    [Migration("20210218070737_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,10 +33,10 @@ namespace asp_net_fifth_assignment.Migrations
                     b.Property<string>("AuthorLastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CategoryOne")
+                    b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CategoryTwo")
+                    b.Property<string>("Classification")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Isbn")
