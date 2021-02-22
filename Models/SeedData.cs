@@ -33,7 +33,8 @@ namespace asp_net_fifth_assignment.Models
                         Isbn= "978-0451419439",
                         Classification = "Fiction",
                         Category = "Classic",
-                        Price = 9.95
+                        Price = 9.95,
+                        Pages = 1488
                     },
 
                     new Book
@@ -45,7 +46,8 @@ namespace asp_net_fifth_assignment.Models
                         Isbn = "978-0743270755",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 14.58
+                        Price = 14.58,
+                        Pages = 944
                     },
 
                     new Book
@@ -57,7 +59,8 @@ namespace asp_net_fifth_assignment.Models
                         Isbn = "978-0553384611",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 21.54
+                        Price = 21.54,
+                        Pages = 832
                     },
 
                     new Book
@@ -69,7 +72,8 @@ namespace asp_net_fifth_assignment.Models
                         Isbn = "978-0812981254",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 11.61
+                        Price = 11.61,
+                        Pages = 864
                     },
 
                     new Book
@@ -81,7 +85,8 @@ namespace asp_net_fifth_assignment.Models
                         Isbn = "978-0812974492",
                         Classification = "Non-Fiction",
                         Category = "Historical",
-                        Price = 13.33
+                        Price = 13.33,
+                        Pages = 528
                     },
 
                     new Book
@@ -93,7 +98,8 @@ namespace asp_net_fifth_assignment.Models
                         Isbn = "978-0804171281",
                         Classification = "Fiction",
                         Category = "Historical Fiction",
-                        Price = 15.95
+                        Price = 15.95,
+                        Pages = 288
                     },
 
                     new Book
@@ -105,7 +111,8 @@ namespace asp_net_fifth_assignment.Models
                         Isbn = "978-1455586691",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
-                        Price = 14.99
+                        Price = 14.99,
+                        Pages = 304
                     },
 
                     new Book
@@ -117,7 +124,8 @@ namespace asp_net_fifth_assignment.Models
                         Isbn = "978-1455523023",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
-                        Price = 21.66
+                        Price = 21.66,
+                        Pages = 240
                     },
 
                     new Book
@@ -129,7 +137,8 @@ namespace asp_net_fifth_assignment.Models
                         Isbn = "978-1591847984",
                         Classification = "Non-Fiction",
                         Category = "Business",
-                        Price = 29.16
+                        Price = 29.16,
+                        Pages = 400
                     },
 
                     new Book
@@ -141,7 +150,47 @@ namespace asp_net_fifth_assignment.Models
                         Isbn = "978-0553393613",
                         Classification = "Fiction",
                         Category = "Thrillers",
-                        Price = 15.03
+                        Price = 15.03,
+                        Pages = 642
+                    },
+
+                    new Book
+                    {
+                        Title = "The Millionaire Next Door",
+                        AuthorFirstName = "Thomas J.",
+                        AuthorLastName = "Stanley",
+                        Publisher = "Taylor Trade",
+                        Isbn = "978-1-58979-574-1",
+                        Classification = "Non-Fiction",
+                        Category = "Self-Help",
+                        Price = 10.29,
+                        Pages = 272
+                    },
+
+                    new Book
+                    {
+                        Title = "The Screwtape Letters",
+                        AuthorFirstName = "C. S.",
+                        AuthorLastName = "Lewis",
+                        Publisher = "HarperSanFransisco",
+                        Isbn = "0-06-065293-4",
+                        Classification = "Fiction",
+                        Category = "Religion",
+                        Price = 13.49,
+                        Pages = 209
+                    },
+
+                    new Book
+                    {
+                        Title = "The Only Pirate at the Party",
+                        AuthorFirstName = "Lindsey",
+                        AuthorLastName = "Stirling",
+                        Publisher = "Gallery Books",
+                        Isbn = "978-1-5011-1910-1",
+                        Classification = "Non-Fiction",
+                        Category = "Autobiography",
+                        Price = 24.00,
+                        Pages = 258
                     }
 
                     );

@@ -40,6 +40,9 @@ namespace asp_net_fifth_assignment.Migrations
                     b.Property<string>("Isbn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Pages")
+                        .HasColumnType("int");
+
                     b.Property<double>("Price")
                         .HasColumnType("float");
 

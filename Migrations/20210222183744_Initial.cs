@@ -19,7 +19,8 @@ namespace asp_net_fifth_assignment.Migrations
                     Isbn = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Classification = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<double>(type: "float", nullable: false)
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    Pages = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

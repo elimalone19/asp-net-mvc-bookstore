@@ -15,15 +15,20 @@ namespace asp_net_fifth_assignment.Controllers
 
         private IBookstoreRepository _repository;
 
+        public int ItemsPerPage = 5;
+
         public HomeController(ILogger<HomeController> logger, IBookstoreRepository repository)
         {
             _logger = logger;
             _repository = repository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            return View(_repository.Books);
+            return View(_repository.Books
+                .OrderBy(p => p.BookId).Skip((page -1) * ItemsPerPage)
+                .Take(ItemsPerPage)
+                );
         }
 
         public IActionResult Privacy()

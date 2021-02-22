@@ -9,7 +9,7 @@ using asp_net_fifth_assignment.Models;
 namespace asp_net_fifth_assignment.Migrations
 {
     [DbContext(typeof(BookstoreDbContext))]
-    [Migration("20210218070737_Initial")]
+    [Migration("20210222183744_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,9 @@ namespace asp_net_fifth_assignment.Migrations
 
                     b.Property<string>("Isbn")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Pages")
+                        .HasColumnType("int");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
