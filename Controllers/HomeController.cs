@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using asp_net_fifth_assignment.Models.ViewModels;
 
 namespace asp_net_fifth_assignment.Controllers
 {
@@ -15,7 +16,7 @@ namespace asp_net_fifth_assignment.Controllers
 
         private IBookstoreRepository _repository;
 
-        public int ItemsPerPage = 5;
+        public int PageSize = 5;
 
         public HomeController(ILogger<HomeController> logger, IBookstoreRepository repository)
         {
@@ -25,10 +26,18 @@ namespace asp_net_fifth_assignment.Controllers
 
         public IActionResult Index(int page = 1)
         {
-            return View(_repository.Books
-                .OrderBy(p => p.BookId).Skip((page -1) * ItemsPerPage)
-                .Take(ItemsPerPage)
-                );
+            return View(new BookListViewModel
+            {
+                Books = _repository.Books
+                .OrderBy(p => p.BookId).Skip((page - 1) * PageSize)
+                .Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalNumItems = _repository.Books.Count()
+                }
+            });
         }
 
         public IActionResult Privacy()
