@@ -55,6 +55,11 @@ namespace asp_net_fifth_assignment
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" }
+                    );
+
                 endpoints.MapControllerRoute(
                     "pagination",
                     "P{page}",
