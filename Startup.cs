@@ -28,9 +28,11 @@ namespace asp_net_fifth_assignment
             services.AddControllersWithViews();
             services.AddDbContext<BookstoreDbContext>(options => 
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:BookstoreConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:BookstoreConnection"]);
             });
             services.AddScoped<IBookstoreRepository, EfBookstoreRepository>();
+
+            //services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +68,8 @@ namespace asp_net_fifth_assignment
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
+
+                //endpoints.MapRazorPages();
             });
 
             SeedData.EnsurePopulated(app);
