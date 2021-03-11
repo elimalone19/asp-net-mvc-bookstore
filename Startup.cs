@@ -32,7 +32,10 @@ namespace asp_net_fifth_assignment
             });
             services.AddScoped<IBookstoreRepository, EfBookstoreRepository>();
 
-            //services.AddRazorPages();
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +53,7 @@ namespace asp_net_fifth_assignment
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 
@@ -69,7 +73,7 @@ namespace asp_net_fifth_assignment
 
                 endpoints.MapDefaultControllerRoute();
 
-                //endpoints.MapRazorPages();
+                endpoints.MapRazorPages();
             });
 
             SeedData.EnsurePopulated(app);
