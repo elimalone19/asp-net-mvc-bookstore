@@ -1,0 +1,24 @@
+﻿@{public Cart Cart { get; set; } }
+
+@{Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart(); }
+
+
+    <div style="float: right; margin: 15px;">
+        @*@if (Model.Lines.Count() > 0)
+            {*@
+
+        @*}*@
+
+        <a class="btn btn-sm btn-secondary navbar-btn" asp-page="/Cart"
+           asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+            <i class="fa fa-shopping-cart"></i>
+        </a>
+    </div>
+    <div style="float: right; margin-top: 30px;">
+        <small class="navbar-text" style="color:white">
+            <b>Your cart:</b>
+            @Model.Lines.Sum(x => x.Quantity) item(s)
+            @Model.ComputeTotalSum()
+        </small>
+    </div>
+

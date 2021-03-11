@@ -93,3 +93,4 @@ C:\Users\elima\source\repos\asp-net-mvc-bookstore\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\elima\source\repos\asp-net-mvc-bookstore\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 C:\Users\elima\source\repos\asp-net-mvc-bookstore\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
 C:\Users\elima\source\repos\asp-net-mvc-bookstore\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_CartLayout.cshtml.g.cs
+C:\Users\elima\source\repos\asp-net-mvc-bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CartSummary\Default.cshtml.g.cs

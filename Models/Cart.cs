@@ -9,7 +9,7 @@ namespace asp_net_fifth_assignment.Models
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
-        public void AddItem(Book book, int quantity)
+        public virtual void AddItem(Book book, int quantity)
         {
             CartLine Line = Lines.Where(b => b.Book.BookId == book.BookId)
                 .FirstOrDefault();
@@ -28,10 +28,10 @@ namespace asp_net_fifth_assignment.Models
             }
         }
 
-        public void RemoveLine(Book book) =>
+        public virtual void RemoveLine(Book book) =>
             Lines.RemoveAll(x => x.Book.BookId == book.BookId);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
         public double ComputeTotalSum() => Lines.Sum(e => e.Book.Price * e.Quantity);
         

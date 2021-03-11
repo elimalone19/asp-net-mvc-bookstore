@@ -1,6 +1,7 @@
 using asp_net_fifth_assignment.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -36,6 +37,11 @@ namespace asp_net_fifth_assignment
 
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,17 +68,26 @@ namespace asp_net_fifth_assignment
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("catpage",
-                    "{category}/{page:int}",
-                    new { Controller = "Home", action = "Index" }
-                    );
+                    "{category}/{pageNum:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page",
+                    "P{pageNum:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", pageNum = 1 });
 
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "P{page}",
+                    "P{pageNum}",
                     new { Controller = "Home", action = "Index" });
 
+                //Default mapping to Index.cshtml
                 endpoints.MapDefaultControllerRoute();
 
+                //Deals with Razor Pages
                 endpoints.MapRazorPages();
             });
 

@@ -16,15 +16,26 @@
             <th>Quantity</th>
             <th>Price</th>
             <th>Subtotal</th>
+            <th></th>
         </tr>
     </thead>
 
     <tbody>
         @foreach(var line in Model.Cart.Lines)
         {
-            <tr>
-                <td>@line.Book.Title</td><td>@line.Quantity</td><td>@line.Book.Price</td><td>$@((line.Quantity * line.Book.Price))</td>
-            </tr>
+        <tr>
+            <td>@line.Book.Title</td>
+            <td>@line.Quantity</td>
+            <td>@line.Book.Price</td>
+            <td>$@((line.Quantity * line.Book.Price))</td>
+            <td class="text-center">
+                <form asp-page-handler="Remove" method="post">
+                    <input type="hidden" name="BookId" value="@line.Book.BookId" />
+                    <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                    <button type="submit" class="btn btn-danger">Remove</button>
+                </form>
+            </td>
+        </tr>
         }
     </tbody>
 

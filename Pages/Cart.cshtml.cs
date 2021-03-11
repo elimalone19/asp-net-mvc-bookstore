@@ -7,15 +7,17 @@ using asp_net_fifth_assignment.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+
 namespace asp_net_fifth_assignment.Pages
 {
     public class CartModel : PageModel
     {
         private IBookstoreRepository repository;
 
-        public CartModel (IBookstoreRepository repo)
+        public CartModel (IBookstoreRepository repo, Cart cart)
         {
             repository = repo;
+            Cart = cart;
         }
         
         public Cart Cart { get; set; }
@@ -34,6 +36,19 @@ namespace asp_net_fifth_assignment.Pages
             Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
             Cart.AddItem(book, 1);
+
+            HttpContext.Session.SetJson("cart", Cart);
+
+            return RedirectToPage(new { returnUrl = returnUrl });
+        }
+
+        public IActionResult OnPostRemove(long bookId, string returnUrl)
+        {
+
+            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+
+            Cart.RemoveLine(Cart.Lines.First(b =>
+                b.Book.BookId == bookId).Book);
 
             HttpContext.Session.SetJson("cart", Cart);
 
